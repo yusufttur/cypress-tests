@@ -1,0 +1,9 @@
+{
+  "validUser": {
+    "email": "george.bluth@reqres.in",
+    "password": "test"
+  },
+  "missingPassword": {
+    "email": "george.bluth@reqres.in"
+  }
+}
