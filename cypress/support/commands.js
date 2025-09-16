@@ -14,7 +14,7 @@ Cypress.Commands.add('getTableColumnIndex', (tableSelector, headerText) => {
   cy.get(`${tableSelector} thead th`).then(($ths) => {
     const index = $ths.toArray().findIndex((th) => th.innerText === headerText);
     expect(index, `${headerText} column exists`).to.exist;
-    return cy.wrap(index + 1); // return 1-based index for nth-child
+    return cy.wrap(index + 1);
   });
 });
 
@@ -38,7 +38,7 @@ Cypress.Commands.add('loginApi', (payload, expectedStatus = 200) => {
       url: 'https://reqres.in/api/login',
       headers: { 'x-api-key': 'reqres-free-v1' },
       body: payload,
-      failOnStatusCode: false, // Allow handling of non-2xx status codes
+      failOnStatusCode: false,
     })
     .then((response) => {
       expect(response.status).to.eq(expectedStatus);
